@@ -1,0 +1,19 @@
+use_bpm 160
+use_synth :saw
+
+notes = [:c2, :e2, :g2, :b2, :c3, :b2, :g2, :e2]
+index=0
+s=index
+x=notes
+
+live_loop :main_theme do
+  
+  with_fx :distortion do
+    play x[s]
+    puts (notes[index])
+    sleep 0.5
+    index= s + 1
+    puts(index)
+  end
+end
+
